@@ -89,6 +89,24 @@ gemini-chatbot/
 - **Web Speech API** - Voice input/output
 - **Server-Sent Events** - Real-time streaming
 
+## 📸 Application Screenshots
+
+<div align="center">
+
+### Welcome Screen
+![Welcome Screen](screenshots/welcome-screen.jpeg)
+*Clean welcome interface with quick prompts*
+
+### Chat Conversation  
+![Chat Conversation](screenshots/chat-conversation.jpeg)
+*Example conversation with AI response streaming*
+
+### Chat Management
+![Chat History](screenshots/chat-history-delete.jpeg)
+*Chat history sidebar with delete functionality*
+
+</div>
+
 ## 🚀 Getting Started
 
 ### Prerequisites
