@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  # Gemini AI Chatbot Web App
+  web:
+    build: .
+    container_name: gemini-chatbot
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+      - SECRET_KEY=${SECRET_KEY:-change-me-in-production}
+      - GEMINI_API_KEY=AIzaSyAyylr9WrqRfXixETz61hkOuYjRPyY6n-0
+      - SERPAPI_API_KEY=e7dc2a04055747f85bed7a7df2305c85cc53d0b7a0e21a6ddf20b68271990397
+      - DATABASE_URL=sqlite:///chatbot.db
+    volumes:
+      - ./uploads:/backend/uploads
+      - ./chatbot.db:/backend/chatbot.db
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  chatbot_data:
+    driver: local
